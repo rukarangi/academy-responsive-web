@@ -6,6 +6,8 @@
     <title>Movie Vote Webapp</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
@@ -14,7 +16,13 @@
     <div class="content">
       <p>Here are the movies you can vote on:</p>
 
-      <div class="movie-container"></div>
+      <div class="movie-container">
+				<ul v-cloak>
+					<li v-for="movie in movies">
+						<h3>{{ movie.name }}</h3>
+						<em>{{ movie.length }} minutes</em>
+				</ul>
+			</div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
