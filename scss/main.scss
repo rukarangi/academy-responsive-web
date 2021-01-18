@@ -1,32 +1,37 @@
 [v-cloak] { display: none }
+$main-colour: #ff7f00;
 
+$main-colour: #FF7F00;
+$main-font: 'Cousine', monospace;
+
+// awda
 body {
-  font-family: 'Cousine', monospace;
-  margin: 0;
+  font-family: $main-font;
+  margin: 0px;
   padding: 0;
-}
 
-@media screen and (min-width: 960px) {
-  body {
-    max-width: 918px;
-    margin: 50px auto 20px;
-    border: 1px solid #999;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    box-shadow: 0 0 10px 1px #999;
-  }
+	@media screen and (min-width: 960px) {
+	  body {
+	    max-width: 918px;
+	    margin: 50px auto 20px;
+	    border: 1px solid #999;
+	    border-bottom-left-radius: 10px;
+	    border-bottom-right-radius: 10px;
+	    box-shadow: 0 0 10px 1px #999;
+	  }
+	}
 }
 
 h1 {
-  background-color: #333;
+  background-color: $main-colour;
   color: #fff;
   margin-top: 0;
   padding: 10px 20px;
-}
 
-@media screen and (min-width: 960px) {
-	h1 {
-		font-size: 42px;
+	@media screen and (min-width: 960px) {
+		h1 {
+			font-size: 42px;
+		}
 	}
 }
 
@@ -38,22 +43,42 @@ ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
+
+	li {
+		border: 1px solid $main-colour;
+  	border-bottom-width: 0;
+  	padding: 18px 80px 18px 18px;
+  	position: relative;
+
+	  .votes {
+	    font-size: 50px;
+	    line-height: 50px;
+	    display: block;
+	    position: absolute;
+	    top: 18px;
+	    right: 20px;
+
+	    @media screen and (min-width: 960px) {
+	      top: 25px;
+	    }
+	  }
+
+		&:last-child {
+		  border-bottom-width: 1px;
+		}
+
+		&:hover {
+		  background-color: #ddd;
+		}
+
+		h3  {
+		  margin-top: 0;
+		}
+	}
 }
 
-ul li {
-  border: 1px solid #333;
-  border-bottom-width: 0;
-  padding: 18px;
-}
-
-ul li:last-child {
-  border-bottom-width: 1px;
-}
-
-ul li:hover {
-  background-color: #ddd;
-}
-
-ul li h3  {
-  margin-top: 0;
+.user-select {
+  font-size: 22px;
+  font-family: $main-font;
+  font-weight: bold;
 }
